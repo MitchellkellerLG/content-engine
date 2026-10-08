@@ -1,0 +1,30 @@
+# secrets
+.env
+.env.*
+!.env.example
+.typefully/
+*.pem
+*.key
+
+# your data (never publish)
+voice/data/
+gather/data/
+gather/inbox/*
+!gather/inbox/README.md
+gather/scoring/winners.csv
+/voice/VOICE.md
+/voice/OPINIONS.md
+/voice/BOUNDARIES.md
+/voice/TOPICS.md
+
+# build output
+node_modules/
+.trigger/
+dist/
+repurpose/graphics/**/out/
+repurpose/graphics/**/index.html
+!repurpose/graphics/index.tpl.html
+__pycache__/
+*.pyc
+.DS_Store
+*.log

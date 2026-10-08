@@ -1,0 +1,24 @@
+{
+  "name": "content-engine-automations",
+  "version": "0.1.0",
+  "description": "Opt-in Trigger.dev jobs for X: plug reply on posts that pass an impressions bar, optional self-repost.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "dev": "trigger dev",
+    "deploy": "node scripts/deploy-guard.mjs && trigger deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --no-warnings --test \"tests/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@trigger.dev/sdk": "4.7.3",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "trigger.dev": "4.7.3",
+    "typescript": "^5.9.3"
+  }
+}

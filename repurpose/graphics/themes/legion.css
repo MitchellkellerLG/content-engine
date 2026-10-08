@@ -1,0 +1,12 @@
+/* Legion brand theme: dark navy canvas, cobalt accent. Used for this repo's own demo GIF. */
+:root {
+  --font: "Hanken Grotesk", system-ui, sans-serif; --display: "Hanken Grotesk", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+  --canvas: #171721; --card: #1e1e2a; --text: #ededf3; --muted: #c3c3cc; --border: #363642; --border-strong: #5a5a68;
+  --accent: #5266eb; --accent-light: #6377f0; --accent-deep: #4054d4; --accent-text: #aab4ff;
+  --accent-soft: rgb(82 102 235 / .45); --accent-glow: rgb(82 102 235 / .16); --pulse-rgb: 82 102 235;
+  --wire: #7385f3; --wire-hi: #aab4ff;
+  --glow: rgb(82 102 235 / .14); --glow2: rgb(82 102 235 / .22); --glow3: rgb(82 102 235 / .10);
+  --dot: rgb(237 237 243 / .16); --edge-top: rgb(237 237 243 / .30); --ambient: none;
+  --hi-bg: linear-gradient(180deg, #232438 0%, #1e1e2a 100%); --chip-bg: #272735; --tag-bg: rgb(23 23 33 / .4);
+  --tag-border: rgb(237 237 243 / .35); --pill-bg: #1d1f33;
+}

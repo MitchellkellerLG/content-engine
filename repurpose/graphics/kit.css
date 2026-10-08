@@ -1,0 +1,72 @@
+/* Animated diagram kit: base styles. Colours and fonts come from a theme file (themes/*.css). */
+@font-face { font-family: "Hanken Grotesk"; src: url("fonts/HankenGrotesk.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "JetBrains Mono"; src: url("fonts/JetBrainsMono.woff2") format("woff2"); font-weight: 100 800; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1280px; height: 720px; overflow: hidden; background: var(--canvas); }
+body { font-family: var(--font); color: var(--text); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.abs { position: absolute; }
+
+.frame { position: relative; isolation: isolate; width: 1280px; height: 720px;
+  background: radial-gradient(900px 560px at 30% -14%, var(--glow2), transparent 70%),
+              radial-gradient(700px 500px at 70% 108%, var(--glow3), transparent 70%), var(--canvas); }
+.frame::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.7px); background-size: 26px 26px;
+  -webkit-mask: radial-gradient(75% 60% at 50% 42%, #000 20%, transparent 100%); mask: radial-gradient(75% 60% at 50% 42%, #000 20%, transparent 100%); }
+
+/* header */
+.eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 500; line-height: 1.3;
+  padding: 7px 15px; border: 1.5px solid var(--tag-border); border-radius: 40px; background: var(--tag-bg); color: var(--text); white-space: nowrap; }
+.eyebrow i { display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); transform-origin: center; }
+h1 { font-family: var(--display); font-size: 42px; line-height: 1.08; font-weight: 600; letter-spacing: -0.02em; color: var(--text); white-space: nowrap; }
+.k { font-size: 12.5px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.datepill { font-size: 13px; padding: 7px 10px; color: var(--muted); }
+
+/* cards */
+.card { position: absolute; background: radial-gradient(120% 80% at 50% -10%, var(--glow), transparent 60%), var(--card); border-radius: 16px; box-shadow: var(--ambient); }
+.card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
+  background: linear-gradient(180deg, var(--edge-top), var(--border) 40%, var(--border) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.card.hi, .card.on { background: radial-gradient(120% 90% at 50% -10%, var(--glow), transparent 65%), var(--hi-bg); box-shadow: 0 0 0 1px var(--accent-soft), 0 10px 40px var(--accent-glow); }
+.card.hi::before, .card.on::before { background: linear-gradient(180deg, var(--accent), var(--accent-soft) 100%); }
+.card.dim { opacity: .55; }
+.card.dash { background: transparent; box-shadow: none; border: 1.5px dashed var(--border-strong); }
+.card.dash::before { display: none; }
+.ttl { font-family: var(--display); font-size: 20px; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; white-space: nowrap; }
+.ttl.lg2 { font-size: 26px; }
+.sub { font-size: 14px; color: var(--muted); line-height: 1.38; }
+.tag, .num { font-family: var(--mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.big { font-family: var(--display); font-size: 40px; font-weight: 600; letter-spacing: -.03em; line-height: 1; color: var(--accent-text); }
+
+/* chips, badges, pills */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.cmd { display: inline-block; font-family: var(--mono); font-size: 13px; font-weight: 500; line-height: 1.3; padding: 4px 10px;
+  border-radius: 10px; background: var(--chip-bg); border: 1.5px solid var(--border); color: var(--text); white-space: nowrap; }
+.cmd.acc { color: var(--accent-text); border-color: var(--accent-soft); }
+.badge { display: inline-flex; align-items: center; justify-content: center; flex: none; color: #fff; font-weight: 600;
+  background: linear-gradient(180deg, var(--accent-light), var(--accent)); border: 1.5px solid var(--accent-deep); border-radius: 10px; }
+.apill { position: absolute; font-family: var(--mono); font-size: 12.5px; padding: 5px 12px; border-radius: 40px; border: 1.5px solid var(--accent);
+  color: var(--accent-text); background: var(--pill-bg); white-space: nowrap; box-shadow: 0 6px 18px rgb(0 0 0 / .35); }
+.apill.solid { background: linear-gradient(180deg, var(--accent-light), var(--accent)); color: #fff; border-color: var(--accent-deep); }
+.acc { color: var(--accent-text); }
+.muted { color: var(--muted); }
+
+/* your own images */
+.tile { --s: 36px; display: inline-flex; align-items: center; justify-content: center; flex: none; width: var(--s); height: var(--s);
+  border-radius: 10px; background: #fff; overflow: hidden; vertical-align: middle; }
+.tile img { width: 70%; height: 70%; object-fit: contain; }
+
+/* footer + progress */
+.prog { position: absolute; left: 64px; right: 64px; bottom: 62px; height: 5px; border-radius: 5px; background: var(--border); }
+.prog i { display: block; height: 100%; width: 0; border-radius: 5px; background: linear-gradient(90deg, var(--accent-deep), var(--accent) 60%, var(--accent-light)); }
+.footer { position: absolute; left: 64px; right: 64px; bottom: 22px; z-index: 50; display: flex; justify-content: space-between; align-items: center;
+  font-size: 18px; font-weight: 500; color: var(--muted); }
+.footer .mark { display: flex; align-items: center; gap: 10px; }
+.footer .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); transform-origin: center; }
+
+/* wires + effects */
+svg.wires { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; pointer-events: none; overflow: visible; }
+.sweep { position: relative; }
+.sweep::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; pointer-events: none;
+  background: conic-gradient(from var(--a, 0deg), transparent 0deg, transparent 20deg, var(--wire) 60deg, transparent 100deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
