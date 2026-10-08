@@ -42,6 +42,10 @@ New here? [SETUP.md](SETUP.md) walks through the first run and the questions to 
 - Typefully is used for **drafts**. You schedule them.
 - Nothing here logs into, scrapes or automates LinkedIn.
 
+## Disclaimer
+
+This is a free, unofficial tool shared as is, with no warranty. You're responsible for how you use it. Before you turn anything on, read and follow the current terms, developer policies and automation rules of every platform and API it touches, including [X's Developer Agreement and Policy](https://developer.x.com/en/developer-terms), [X's automation rules](https://help.x.com/en/rules-and-policies/x-automation), Typefully, Trigger.dev, GitHub and any AI provider you use. Those rules and API prices change often, so check them yourself rather than relying on the notes in this repo. Nothing here is legal advice, and it isn't affiliated with or endorsed by any of those platforms. If an action could get your account limited or suspended, don't automate it.
+
 ## Requirements
 
 Python 3.10+ (standard library only for `voice/` and `gather/`). Node 22.6+ for `automations/`. Playwright and ffmpeg only if you render graphics. `gh` only for GitHub activity.
