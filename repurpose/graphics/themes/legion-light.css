@@ -1,0 +1,13 @@
+/* Legion light theme: Legion site palette (#f3f6f9 canvas, cobalt #5266eb), no glow effects.
+   Same layout as legion.css; pair it with the dark render for every graphic. */
+:root {
+  --font: "Arcadia", "Hanken Grotesk", system-ui, sans-serif; --display: "Arcadia", "Hanken Grotesk", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+  --canvas: #f3f6f9; --card: #ffffff; --text: #15172a; --muted: #4a5068; --border: #d6dce6; --border-strong: #a9b2c3;
+  --accent: #5266eb; --accent-light: #6377f0; --accent-deep: #4054d4; --accent-text: #3a4bc9;
+  --accent-soft: rgb(82 102 235 / .55); --accent-glow: transparent; --pulse-rgb: 82 102 235;
+  --wire: #5266eb; --wire-hi: #3a4bc9;
+  --glow: transparent; --glow2: transparent; --glow3: transparent;
+  --dot: rgb(21 23 42 / .10); --edge-top: rgb(255 255 255 / 0); --ambient: 0 1px 2px rgb(21 23 42 / .06);
+  --hi-bg: #eef1fd; --chip-bg: #eef1f6; --tag-bg: rgb(255 255 255 / .7);
+  --tag-border: rgb(21 23 42 / .25); --pill-bg: #e8ecfc;
+}

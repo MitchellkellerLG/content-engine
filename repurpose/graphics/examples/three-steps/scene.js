@@ -11,7 +11,7 @@ const { M } = K;
 
 const steps = [
   { n: "1", t: "The X post", s: "The idea in its shortest form. It already proved itself.", chips: ["your words", "your numbers"] },
-  { n: "2", t: "The LinkedIn rewrite", s: "Same proof, more context up top, link in the first comment.", chips: ["x-to-linkedin.md", "no-ai-slop"], acc: [0] },
+  { n: "2", t: "The LinkedIn rewrite", s: "Same proof, more context up top, link in the comments only when one is really there.", chips: ["x-to-linkedin.md", "no-ai-slop"], acc: [0] },
   { n: "3", t: "The animated graphic", s: "Fourteen seconds that explain the idea without sound.", chips: ["scene.js", "render.py"], acc: [1] },
 ];
 const X0 = M, BADGE = 44, CX = X0 + 60, CW = 700, Y = [150, 300, 450], CH = 124;

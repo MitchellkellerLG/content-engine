@@ -10,11 +10,13 @@
 - No clipped fragments, slogan endings, rhythm triads or em dashes.
 - Longer detailed posts by default. Short punchy POV-style quote tweets with a strong reaction GIF are fine for meme formats.
 - Present alternatives as options or ways, not steps.
+- Give the sauce: concrete how-to and what works, not what's holding people back. Avoid negative framing.
 
 ## Links and credit
 - Write domains broken and unlinked, like "x dot com".
 - When it's your own article, quote-tweet it instead of linking it.
-- Referral or affiliate links go in the first comment.
+- Referral or affiliate links go in the first comment. A "link in the comments" line is fine only when the comment really carries a link; never as filler.
+- Quote tweets use a GIF or video, never a still.
 - Credit borrowed ideas by handle.
 - Use only real numbers, each traceable to a source.
 
@@ -27,4 +29,5 @@
 ## Scheduling (Typefully)
 - If the CLI draft update crashes on null platforms, use the REST API: GET the draft, back it up, PATCH only the changed text while keeping `media_ids` and `quote_post_url`, then GET again and compare.
 - Never print API keys.
+- Publish now by setting `publish_at` to the current time. Avoid the web editor for text edits; it can wipe a draft.
 - Replies can't be published through the API, so save first comments as reply drafts and post them by hand.

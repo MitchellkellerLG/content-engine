@@ -93,7 +93,9 @@ def encode(frames, out, name, fps, gif_width, gif_fps):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("scene", type=Path)
-    ap.add_argument("--theme", default="default")
+    ap.add_argument("--theme", default="default",
+                    help="theme name, a comma list (legion,legion-light), or 'both' for legion + legion-light; "
+                         "with several themes each output gets a _<theme> suffix")
     ap.add_argument("--name", default="graphic")
     ap.add_argument("--stills", type=float, nargs="*", default=None,
                     help="times in seconds; with no values, one still of the finished frame")
@@ -104,21 +106,23 @@ def main(argv=None):
     ap.add_argument("--strict", action="store_true", help="stop without rendering if the layout check finds problems")
     args = ap.parse_args(argv)
     scene = args.scene.resolve()
-    page = write_page(scene, args.theme)
-    print(f"page: {page}")
-    if args.stills is None and not args.video:
-        return
-    if args.video and not shutil.which("ffmpeg"):
-        sys.exit("ffmpeg not found")
-    out = scene / "out"
-    out.mkdir(exist_ok=True)
-    frames, problems = asyncio.run(capture(page, out, args.name, args.stills, args.video, args.fps, args.strict))
-    if args.strict and problems:
-        sys.exit("layout problems found; nothing rendered (drop --strict to render anyway)")
-    if frames:
-        encode(frames, out, args.name, args.fps, args.gif_width, args.gif_fps)
-    print(f"done -> {out}")
-
+    themes = ["legion", "legion-light"] if args.theme == "both" else [t for t in args.theme.split(",") if t]
+    for theme in themes:
+        name = args.name if len(themes) == 1 else f"{args.name}_{theme}"
+        page = write_page(scene, theme)
+        print(f"page: {page} ({theme})")
+        if args.stills is None and not args.video:
+            continue
+        if args.video and not shutil.which("ffmpeg"):
+            sys.exit("ffmpeg not found")
+        out = scene / "out"
+        out.mkdir(exist_ok=True)
+        frames, problems = asyncio.run(capture(page, out, name, args.stills, args.video, args.fps, args.strict))
+        if args.strict and problems:
+            sys.exit("layout problems found; nothing rendered (drop --strict to render anyway)")
+        if frames:
+            encode(frames, out, name, args.fps, args.gif_width, args.gif_fps)
+        print(f"done -> {out} ({theme})")
 
 if __name__ == "__main__":
     main()
