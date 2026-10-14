@@ -43,4 +43,4 @@ Logic adapted from HumanLayer's `show-me` skill (MIT, https://github.com/humanla
 - No images in newsletter emails.
 
 ## 4. Deck build kit
-`skills/infographic/deck/`: `python build.py slides.py` renders HTML + PDF + PNG per slide in light mode by default (no glow); `--theme dark` or `--theme both` for the dark version. `python shoot.py out` makes a 550px contact sheet. The light theme lists Arcadia first but doesn't bundle it; without it installed, renders fall back to Hanken Grotesk.
+`skills/infographic/deck/`: `python build.py slides.py` renders HTML + PDF + PNG per slide in light mode by default (no glow); `--theme dark` or `--theme both` for the dark version. `python shoot.py out` makes a 550px contact sheet. Both themes use the bundled Inter font (OFL) with Hanken Grotesk as fallback.

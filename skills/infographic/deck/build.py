@@ -8,8 +8,7 @@ slides.py calls S(eyebrow, title, body_html, notes_list) once per slide.
 Theme tokens come from repurpose/graphics/themes/legion-light.css and legion.css,
 so decks and graphics share one palette. Footer is a page number only (prospect decks carry no
 branding); pass --corner yourdomain.com when branding is wanted.
-Arcadia is listed first in the light theme but is not bundled; without it installed the deck
-falls back to Hanken Grotesk.
+Fonts: Inter (bundled, OFL) with Hanken Grotesk as fallback, from the render kit's fonts/ folder.
 """
 import argparse, asyncio, html as H
 from pathlib import Path
@@ -18,6 +17,7 @@ KIT = Path(__file__).resolve().parents[3] / "repurpose" / "graphics"
 THEMES = {"light": "legion-light", "dark": "legion"}
 
 CSS = """
+@font-face{font-family:"Inter";src:url(FONTS/InterVariable.woff2);font-weight:100 900;font-display:block}
 @font-face{font-family:"Hanken Grotesk";src:url(FONTS/HankenGrotesk.woff2);font-weight:100 900}
 @font-face{font-family:"JetBrains Mono";src:url(FONTS/JetBrainsMono.woff2)}
 *{box-sizing:border-box;margin:0;padding:0}
