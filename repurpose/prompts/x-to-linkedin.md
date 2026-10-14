@@ -8,7 +8,7 @@ Write one LinkedIn post:
 - Give the context an X reader already had (who I am in this story, what I was trying to do) in one or two short lines.
 - 120 to 250 words. Short paragraphs, one idea each. A numbered list only if the original had steps.
 - End on the point, not a summary and not a question for engagement.
-- No hashtags, no emoji, no em dashes, no "here's how", no "link below", no call to action. If there is a link, put it in a separate "First comment:" line after the post.
+- No hashtags, no emoji, no em dashes, no "here's how", no call to action. Only say the link is in the comments when a real link goes in the first comment. Give the sauce (concrete how-to), not what holds people back. If there is a link, put it in a separate "First comment:" line after the post.
 
 Return:
 1. The post.

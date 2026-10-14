@@ -19,4 +19,4 @@ Rules:
 - Never invent numbers, names, quotes or results. Missing proof means a weaker claim, not a made-up one.
 - Private stays private: clients, money, internal tools and spend, people who haven't posted publicly.
 - No LinkedIn automation beyond creating Typefully drafts the author approves.
-- At most one visual post per day on X; links in the first comment; no "here's how" or "link below" lines.
+- At most one visual post per day on X; links in the first comment; a "link in the comments" line only when the comment really carries a link, never filler; no "here's how" lines; quote tweets use a GIF or video, never stills; graphics ship in dark and light mode.

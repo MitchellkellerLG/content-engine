@@ -22,7 +22,7 @@ Outputs: `graphic.mp4` (1280x720, fine for X), `graphic_1080p.mp4` (LinkedIn), `
 ## Brand it
 
 - `Kit({ handle, corner })` sets the footer: your handle bottom-left, your site bottom-right.
-- Themes are CSS variables in `themes/`. Copy `default.css` to `themes/yourbrand.css`, change the colours, render with `--theme yourbrand`. `legion.css` is the theme this repo's own demo uses; please don't ship it as your brand. `legion-light.css` is its light-mode twin. Render several themes at once with `--theme a,b` (or `--theme both` = legion + legion-light); outputs get a `_<theme>` suffix.
+- Themes are CSS variables in `themes/`. Copy `default.css` to `themes/yourbrand.css`, change the colours, render with `--theme yourbrand`. `legion.css` is the theme this repo's own demo uses; please don't ship it as your brand. `legion-light.css` is its light-mode twin (no glow; lists Arcadia first, falls back to Hanken Grotesk when Arcadia isn't installed). Render several themes at once with `--theme a,b` (or `--theme both` = legion + legion-light); outputs get a `_<theme>` suffix.
 - Fonts: Hanken Grotesk and JetBrains Mono, both under the SIL Open Font License (`fonts/OFL-*.txt`). Swap in your own by editing the `@font-face` lines in `kit.css` and the `--font` variables in your theme. Only use fonts whose license lets you embed them.
 - Logos: none are included. If you add a company's logo with `K.img("logo.svg")`, make sure you're allowed to use it.
 
