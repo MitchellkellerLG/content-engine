@@ -14,10 +14,12 @@
 
 ## Links and credit
 - Write domains broken and unlinked, like "x dot com".
+- Never start a post with an @handle. X treats it as a reply, so it skips the public feed. Lead with the name, like "Jane (@janedoe) said".
+- When a post builds on someone else's post, default to a quote tweet of it (with a GIF or video) instead of tagging them. Their post shows underneath, so you can drop their quotes and handle.
 - When it's your own article, quote-tweet it instead of linking it.
-- Referral or affiliate links go in the first comment. A "link in the comments" line is fine only when the comment really carries a link; never as filler.
+- Referral or affiliate links go in the first comment. A "link in the comments" or "in the replies" line is fine only when the comment really carries a link; never as filler. A call to action is optional, and dropping it is often better.
 - Quote tweets use a GIF or video, never a still.
-- Credit borrowed ideas by handle.
+- Credit borrowed ideas by name and handle, with the handle after the name.
 - Use only real numbers, each traceable to a source.
 
 ## Review before posting

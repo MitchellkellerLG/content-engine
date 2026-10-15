@@ -1,13 +1,26 @@
-/* Legion light theme: Legion site palette (#f3f6f9 canvas, cobalt #5266eb), no glow effects.
-   Same layout as legion.css; pair it with the dark render for every graphic. */
+/* Legion light theme ("sky wash"). Same layout as legion.css; pair it with the dark render.
+   Content graphics (.frame): pale sky-blue wash, navy dot grid, a faint cobalt ridge, white cards with
+   cobalt-tinted edges and soft layered navy shadows, solid cobalt badges, deep navy ink. Soft depth, no heavy glow.
+   Decks (skills/infographic/deck/build.py) read only the tokens, so slides stay flat.
+   Card text: aim for 28px+ on the 1280px canvas so it reads at 550px wide. */
 :root {
   --font: "Inter", "Hanken Grotesk", system-ui, sans-serif; --display: "Inter", "Hanken Grotesk", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
-  --canvas: #f3f6f9; --card: #ffffff; --text: #15172a; --muted: #4a5068; --border: #d6dce6; --border-strong: #a9b2c3;
-  --accent: #5266eb; --accent-light: #6377f0; --accent-deep: #4054d4; --accent-text: #3a4bc9;
-  --accent-soft: rgb(82 102 235 / .55); --accent-glow: transparent; --pulse-rgb: 82 102 235;
+  --canvas: #f3f6f9; --card: #ffffff; --text: #141a2e; --muted: #47506a; --border: #d6dee7; --border-strong: #a9b4c6;
+  --accent: #5266eb; --accent-light: #6b7ef2; --accent-deep: #3f52d6; --accent-text: #3f52d6;
+  --accent-soft: rgb(82 102 235 / .55); --accent-glow: rgb(82 102 235 / .12); --pulse-rgb: 82 102 235;
   --wire: #5266eb; --wire-hi: #3a4bc9;
-  --glow: transparent; --glow2: transparent; --glow3: transparent;
-  --dot: rgb(21 23 42 / .10); --edge-top: rgb(255 255 255 / 0); --ambient: 0 1px 2px rgb(21 23 42 / .06);
-  --hi-bg: #eef1fd; --chip-bg: #eef1f6; --tag-bg: rgb(255 255 255 / .7);
-  --tag-border: rgb(21 23 42 / .25); --pill-bg: #e8ecfc;
+  --glow: transparent; --glow2: rgb(82 102 235 / .16); --glow3: rgb(82 102 235 / .09);
+  --dot: rgb(20 30 60 / .13); --edge-top: rgb(255 255 255 / 0);
+  --ambient: 0 2px 4px rgb(24 38 56 / .04), 0 8px 20px rgb(24 38 56 / .06), 0 18px 36px -18px rgb(24 38 56 / .18);
+  --hi-bg: linear-gradient(180deg, #f2f4ff 0%, #ffffff 100%); --chip-bg: #eef1f6; --tag-bg: rgb(255 255 255 / .85);
+  --tag-border: rgb(82 102 235 / .35); --pill-bg: #e8ecfc;
 }
+.frame { background:
+  radial-gradient(1000px 520px at 18% -18%, rgb(82 140 235 / .12), transparent 70%),
+  radial-gradient(800px 460px at 92% 112%, rgb(82 102 235 / .10), transparent 70%),
+  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 220' preserveAspectRatio='none'><path d='M0 150 L120 96 L210 132 L330 58 L440 120 L560 84 L660 128 L780 46 L900 118 L1010 80 L1120 126 L1280 70 L1280 220 L0 220 Z' fill='%235266eb' fill-opacity='.05'/><path d='M0 186 L150 140 L260 170 L400 122 L520 168 L650 132 L770 172 L900 128 L1040 168 L1160 140 L1280 162 L1280 220 L0 220 Z' fill='%235266eb' fill-opacity='.07'/></svg>") bottom / 100% 230px no-repeat,
+  linear-gradient(180deg, #dfe9f6 0%, #edf2f8 40%, #f5f7fa 75%); }
+.frame .card::before { background: linear-gradient(180deg, rgb(82 102 235 / .22), rgb(82 102 235 / .14) 45%, rgb(82 102 235 / .14) 100%); }
+.frame .card.hi, .frame .card.on { box-shadow: 0 0 0 1px var(--accent-soft), 0 14px 30px -14px rgb(82 102 235 / .40); }
+.frame .badge { background: #5266eb; border-color: #4054d4; box-shadow: none; }
+.frame .prog { height: 6px; background: rgb(20 30 60 / .09); }

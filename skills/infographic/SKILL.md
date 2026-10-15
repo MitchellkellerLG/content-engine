@@ -22,11 +22,11 @@ Logic adapted from HumanLayer's `show-me` skill (MIT, https://github.com/humanla
 5. Cut to max 8 items.
 
 ## 2. Render in your brand style
-- Ship every graphic in BOTH dark mode and light mode with the same layout: one accent colour, a progress bar on animated versions, your domain in the bottom-right corner on every frame. Light mode drops glow effects.
+- Ship every graphic in BOTH dark mode and light mode with the same layout: one accent colour, a progress bar on animated versions, your domain in the bottom-right corner on every frame. Light mode drops heavy glow but keeps soft depth so it doesn't look stripped: a subtle accent-tinted gradient wash, a faint dot grid or texture, white cards with soft layered shadows, and deep navy text (the `legion-light` demo theme shows this "sky wash" look).
 - Render both with `python repurpose/graphics/render.py <scene> --theme dark-theme,light-theme --stills` (outputs get a `_<theme>` suffix). The demo pair is `--theme both` = `legion` + `legion-light`; make your own pair by copying `themes/default.css`.
 - Animated graphics are HTML scenes recorded to MP4/GIF. Hold the final frame for at least 5 seconds.
 - Borrow a reference's motion and layout, never its logos, fonts or branding.
-- Readable at ~550px wide: on a 1280px canvas body >= 24px, labels >= 19px, titles >= 44px.
+- Readable at ~550px wide: on a 1280px canvas aim for card text >= 28px (24px is the floor), body >= 24px, labels >= 19px, titles >= 44px.
 
 ## 3. Deck mode
 - Write `STRUCTURE.md` first (Shape / Point / Layout per slide, FLAG anything unverified), then build slides.
