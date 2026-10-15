@@ -9,3 +9,5 @@ Plain-markdown instructions any AI coding assistant can follow (Claude Code, Cod
 | `voice-builder` | First run, and every month or two: build or refresh your voice files |
 | `repurpose` | Turning a proven X post into LinkedIn + graphic + quote post |
 | `no-ai-slop` | Editing any draft so it sounds like a person wrote it |
+
+- `infographic/`: Show Me decompose-first infographics and decks. See also `../docs/writing-style.md`.
